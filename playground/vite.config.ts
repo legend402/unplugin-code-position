@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
-import Unplugin from '../src/vite'
+import Unplugin, { getUseablePort } from '../src/vite'
 
-export default defineConfig({
-  plugins: [
-    Inspect(),
-    Unplugin({
-      port: 9002,
-    }),
-  ],
+export default defineConfig(async () => {
+  return {
+    plugins: [
+      Inspect(),
+      Unplugin({
+        port: await getUseablePort(9002),
+      }),
+    ],
+  }
 })

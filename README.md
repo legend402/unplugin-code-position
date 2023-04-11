@@ -2,7 +2,7 @@
 
 [![NPM version](https://www.npmjs.com/package/unplugin-code-position?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-code-position)
 
-transform px to rem, you can specify the directory you want to convert to
+Click on an element on the page to find its corresponding position in the code
 
 ## Usage
 

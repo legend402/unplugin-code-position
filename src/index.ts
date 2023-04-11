@@ -4,6 +4,7 @@ import type { Options } from './types'
 import { getHtmlPositionCode } from './utils/position'
 import { codeLineTrack } from './utils/code'
 import { createHttpServer } from './utils/httpServer'
+import { getUseablePort } from './utils/port'
 
 let server: http.Server
 
@@ -38,13 +39,10 @@ export default createUnplugin<Options | undefined>((options = {}) => ({
     })
     compiler.hooks.emit.tap('AddSource', (compilation) => {
       Object.keys(compilation.assets).forEach((filename) => {
-        // step4: 得到资源内容
         let content = compilation.assets[filename].source() as string
-        // step5: 清除 html 文件中的 data-test 属性
         if (filename === 'index.html')
           content = content + getHtmlPositionCode(port)
 
-        // step6: 更新 compilation.assets[filename] 对象
         compilation.assets[filename] = {
           source() {
             return content
@@ -57,3 +55,7 @@ export default createUnplugin<Options | undefined>((options = {}) => ({
     })
   },
 }))
+
+export {
+  getUseablePort,
+}
