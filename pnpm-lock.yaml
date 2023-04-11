@@ -17,13 +17,11 @@ importers:
       tsup: ^6.5.0
       typescript: ^4.9.4
       unplugin: ^1.0.1
-      unplugin-code-position: workspace:^0.1.2
       vite: ^4.0.0
       vitest: ^0.25.7
       webpack: ^5.75.0
     dependencies:
       unplugin: 1.0.1
-      unplugin-code-position: 'link:'
     devDependencies:
       '@antfu/eslint-config': 0.33.1_ha6vam6werchizxrnqvarmz2zu
       '@types/node': 18.11.13

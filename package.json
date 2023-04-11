@@ -68,8 +68,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "unplugin": "^1.0.1",
-    "unplugin-code-position": "workspace:^0.1.2"
+    "unplugin": "^1.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
