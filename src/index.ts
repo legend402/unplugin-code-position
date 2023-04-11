@@ -14,7 +14,6 @@ export default createUnplugin<Options | undefined>((options = {}) => ({
     return !id.includes('node_modules') && !id.includes('index.html')
   },
   transform(code, path) {
-    console.log(codeLineTrack(code, path.split('?')[0]))
     return codeLineTrack(code, path.split('?')[0])
   },
   vite: {
