@@ -3,7 +3,7 @@
 [![NPM version](https://www.npmjs.com/package/unplugin-code-position?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-code-position)
 
 Click on an element on the page to find its corresponding position in the code
-
+Hold down the shift key and click on an element on the page to jump to the corresponding code location
 ## Usage
 
 | options | desc             | default |  |
