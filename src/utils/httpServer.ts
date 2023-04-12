@@ -3,6 +3,7 @@ import child_process from 'child_process'
 
 export const createHttpServer = (port: number) => {
   const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     const code = req.url?.split('?')[1]
     if (code?.length) {
       const path = code.split('=')[1]
@@ -16,7 +17,6 @@ export const createHttpServer = (port: number) => {
       }),
     )
   })
-
   server.listen(port, () => {
     console.log(`codePositionServer started on port ${port}`)
   })

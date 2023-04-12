@@ -3,7 +3,14 @@
 [![NPM version](https://www.npmjs.com/package/unplugin-code-position?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-code-position)
 
 Click on an element on the page to find its corresponding position in the code
+
+在页面上点击元素，跳转到在代码中对应的位置
+
+
 Hold down the shift key and click on an element on the page to jump to the corresponding code location
+
+按住shift键后点击页面上的元素跳转到对应的代码位置
+
 ## Usage
 
 | options | desc             | default |  |
@@ -21,18 +28,28 @@ npm i unplugin-code-position -D
 
 ```ts
 // vite.config.ts
-import UnpluginCodePosition from 'unplugin-code-position/vite'
+import UnpluginCodePosition， { getUseablePort } from 'unplugin-code-position/vite'
 
 export default defineConfig({
   plugins: [
     UnpluginCodePosition ({ /* options */ }),
   ],
 })
+// or
+
+export default defineConfig(async () => {
+ return {
+  plugins: [
+    UnpluginCodePosition ({ port: await getUseablePort(9004)) }),
+  ],
+}
+}))
 ```
 
 Example: [`playground/`](./playground/)
 
 `<br></details>`
+
 
 <details>
 <summary>Webpack</summary><br>
