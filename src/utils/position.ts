@@ -25,7 +25,7 @@ export const getHtmlPositionCode = (port = 9002): string => {
       const sendRequestToOpenFileInEditor = (filePath) => {
         const protocol = window.location.protocol || 'http:'
         const hostname = window.location.hostname || 'localhost'
-        fetch(\`\${protocol}//\${hostname}:${port}?filePath=\${filePath}\`)
+        fetch(\`\${protocol}//\${hostname}:${port}?filePath=\${filePath}\`, { cors: true })
         .catch(err => {
           console.log(err)
         })

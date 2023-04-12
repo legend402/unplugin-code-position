@@ -2,7 +2,7 @@ const addLineAttr = (lineStr: string, line: number, path: string) => {
   if (!/^\s+</.test(lineStr))
     return lineStr
 
-  const reg = /((((^(\s)+\<))|(^\<))[\w-]+)|(<\/template)/g
+  const reg = /((((^(\s)+\<))|(^\<))[\w-]+(\.[\w-]+)?)|(<\/template>)/g
   let leftTagList: any = lineStr.match(reg)
   if (leftTagList) {
     leftTagList = Array.from(new Set(leftTagList))
