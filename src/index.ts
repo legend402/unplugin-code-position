@@ -12,7 +12,8 @@ export default createUnplugin<Options | undefined>((options = {}) => ({
   name: 'unplugin-code-position',
   enforce: 'pre',
   transformInclude(id) {
-    return !id.includes('node_modules') && !id.includes('index.html')
+    const handleFileList = ['.vue', '.js', '.jsx', '.ts', '.tsx', '.svelte']
+    return !id.includes('node_modules') && !id.includes('index.html') && handleFileList.some(key => id.includes(key))
   },
   transform(code, path) {
     return codeLineTrack(code, path.split('?')[0])
